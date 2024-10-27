@@ -4,38 +4,43 @@ using UnityEngine;
 
 public class MotionScript : MonoBehaviour
 {
+    private GameObject targetObject;
     // Start is called before the first frame update
     void Start()
     {
-        
+        targetObject = GameObject.Find("Sphere");
     }
 
     // Update is called once per frame
     void Update()
     {
-        float wVal = Input.GetKeyDown("w");
-        float aVal = Input.GetKeyDown("a");
-        float sVal = Input.GetKeyDown("s");
-        float dVal = Input.GetKeyDown("d");
-        if (Input.GetKeyDown("w"))
+        bool wVal = Input.GetKeyDown(KeyCode.UpArrow);
+        float wwVal = 1;
+        bool aVal = Input.GetKeyDown(KeyCode.LeftArrow);
+        float aaVal = -1;
+        bool sVal = Input.GetKeyDown(KeyCode.DownArrow);
+        float ssVal = -1;
+        bool dVal = Input.GetKeyDown(KeyCode.RightArrow);
+        float ddVal = 1;
+        if (Input.GetKeyDown(KeyCode.UpArrow) == true)
         {
-
-            Debug.Log("W key was pressed");
+            targetObject.transform.Translate(0, wwVal, 0);
+            Debug.Log("Up Arrow key was pressed");
         }
-        if (Input.GetKeyDown("a"))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) == true)
         {
-
-            Debug.Log("A key was pressed");
+            targetObject.transform.Translate(aaVal, 0, 0);
+            Debug.Log("Left Arrow key was pressed");
         }
-        if (Input.GetKeyDown("s"))
+        if (Input.GetKeyDown(KeyCode.DownArrow) == true)
         {
-
-            Debug.Log("S key was pressed");
+            targetObject.transform.Translate(0, ssVal, 0);
+            Debug.Log("Down Arrow key was pressed");
         }
-        if (Input.GetKeyDown("d"))
+        if (Input.GetKeyDown(KeyCode.RightArrow) == true)
         {
-
-            Debug.Log("D key was pressed");
+            targetObject.transform.Translate(ddVal, 0, 0);
+            Debug.Log("Right Arrow key was pressed");
         }
     }
 }
