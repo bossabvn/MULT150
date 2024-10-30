@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class TriggerScript : MonoBehaviour
 {
+    public GameObject LTrigger;
+    public GameObject RTrigger;
+    public GameObject Sphere;
+     
     // Start is called before the first frame update
     void Start()
     {
@@ -18,15 +22,18 @@ public class TriggerScript : MonoBehaviour
 
     void OnTriggerEnter (Collider other)
     {
-        print(other.gameObject.name + " has entered the cube");
+        if (other.gameObject.name == "Sphere")
+        print("Sphere has entered " + gameObject.name);
     }
     void OnTriggerStay (Collider other)
     {
-        print(other.gameObject.name + " is still in the cube");
+        if (other.gameObject.name == "Sphere")
+        print("Sphere is still in " + gameObject.name);
     }
     void OnTriggerExit (Collider other)
     {
-        print(other.gameObject.name + " has left the cube");
+        if (other.gameObject.name == "Sphere")
+        print("Sphere has left " + gameObject.name);
     }
     // Sphere is kinematic rigid body collider, Cube is static trigger collider
 }

@@ -15,32 +15,28 @@ public class MotionScript : MonoBehaviour
     void Update()
     {
         bool wVal = Input.GetKeyDown(KeyCode.UpArrow);
-        float wwVal = 1;
+        float wwVal = 1f / 2;
         bool aVal = Input.GetKeyDown(KeyCode.LeftArrow);
-        float aaVal = -1;
+        float aaVal = -1f / 2;
         bool sVal = Input.GetKeyDown(KeyCode.DownArrow);
-        float ssVal = -1;
+        float ssVal = -1f / 2;
         bool dVal = Input.GetKeyDown(KeyCode.RightArrow);
-        float ddVal = 1;
+        float ddVal = 1f / 2;
         if (Input.GetKeyDown(KeyCode.UpArrow) == true)
         {
             targetObject.transform.Translate(0, wwVal, 0);
-            Debug.Log("Up Arrow key was pressed");
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow) == true)
         {
             targetObject.transform.Translate(aaVal, 0, 0);
-            Debug.Log("Left Arrow key was pressed");
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) == true)
         {
             targetObject.transform.Translate(0, ssVal, 0);
-            Debug.Log("Down Arrow key was pressed");
         }
         if (Input.GetKeyDown(KeyCode.RightArrow) == true)
         {
             targetObject.transform.Translate(ddVal, 0, 0);
-            Debug.Log("Right Arrow key was pressed");
         }
     }
 }
